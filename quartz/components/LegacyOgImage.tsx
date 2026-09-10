@@ -7,22 +7,22 @@ const fontName = (font: string | { name: string }) => (typeof font === "string" 
 function sectionLabel(slug: string, english: boolean) {
   const path = slug.replace(/^\/+|\/+$/g, "").replace(/\/index$/, "")
   const section = path.split("/")[0]
-  if (path.split("/").includes("translations")) return english ? "TRANSLATIONS" : "ПЕРЕВОДЫ"
+  if (path.split("/").includes("translations")) return english ? "TRANSLATIONS" : "अनुवाद"
   const labels: Record<string, [string, string, string, string]> = {
-    interviews: ["ИНТЕРВЬЮ", "ИНТЕРВЬЮ", "INTERVIEW", "INTERVIEWS"],
-    authors: ["АВТОР", "АВТОРЫ", "AUTHOR", "AUTHORS"],
-    published: ["ИЗДАНИЕ", "ИЗДАНИЯ", "BOOK", "BOOKS"],
-    publications: ["ПУБЛИКАЦИЯ", "ПУБЛИКАЦИИ", "PUBLICATION", "PUBLICATIONS"],
-    projects: ["ПРОЕКТ", "ПРОЕКТЫ", "PROJECT", "PROJECTS"],
-    documents: ["ДОКУМЕНТ", "ДОКУМЕНТЫ", "DOCUMENT", "DOCUMENTS"],
-    journal: ["ЖУРНАЛ", "ЖУРНАЛ", "JOURNAL", "JOURNAL"],
-    translations: ["ПЕРЕВОДЫ", "ПЕРЕВОДЫ", "TRANSLATIONS", "TRANSLATIONS"],
+    interviews: ["साक्षात्कार", "साक्षात्कार", "INTERVIEW", "INTERVIEWS"],
+    authors: ["लेखक", "लेखक", "AUTHOR", "AUTHORS"],
+    published: ["पुस्तक", "पुस्तकें", "BOOK", "BOOKS"],
+    publications: ["रचना", "रचनाएँ", "PUBLICATION", "PUBLICATIONS"],
+    projects: ["परियोजना", "परियोजनाएँ", "PROJECT", "PROJECTS"],
+    documents: ["दस्तावेज़", "दस्तावेज़", "DOCUMENT", "DOCUMENTS"],
+    journal: ["पत्रिका", "पत्रिका", "JOURNAL", "JOURNAL"],
+    translations: ["अनुवाद", "अनुवाद", "TRANSLATIONS", "TRANSLATIONS"],
   }
   if (!path || path === "index" || path === "about")
-    return english ? "PUBLISHING HOUSE" : "ИЗДАТЕЛЬСТВО"
+    return english ? "PUBLISHING HOUSE" : "प्रकाशन"
   return (
     labels[section]?.[(english ? 2 : 0) + (path === section ? 1 : 0)] ??
-    (english ? "CATOBLEPAS" : "КАТОБЛЕПАС")
+    (english ? "CATOBLEPAS" : "कातोब्लेपस")
   )
 }
 
@@ -97,7 +97,7 @@ const LegacyOgImage: SocialImageOptions["imageStructure"] = ({
               whiteSpace: "nowrap",
             }}
           >
-            {english ? "CATOBLEPAS" : "КАТОБЛЕПАС"}
+            {english ? "CATOBLEPAS" : "कातोब्लेपस"}
           </div>
           <div style={{ display: "flex", color: "#526585", fontSize: 17 }}>{cfg.baseUrl}</div>
         </div>

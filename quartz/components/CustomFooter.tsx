@@ -1,3 +1,4 @@
+import ageGate from "./scripts/ageGate.inline"
 import { version } from "../../package.json"
 import { QuartzComponent, QuartzComponentConstructor } from "./types"
 
@@ -20,21 +21,15 @@ const CustomFooter: QuartzComponentConstructor<Options> = (opts) => {
         </ul>
       </div>
       <p>
-        Создано <a href="/authors/asp">А. А. Спиридоновым-мл.</a> с помощью{" "}
+        <a href="https://catoblepaspress.ru/authors/asp">अ. अ. स्पिरिदोनोव-जूनियर</a> द्वारा निर्मित, {" "}
         <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a>
         {" · "}
-        <button
-          id="cookie-settings"
-          type="button"
-          class="cookie-settings"
-        >
-          О cookie
-        </button>
+        <span lang="hi">18+ · हिंदी संस्करण</span>
       </p>
     </footer>
   )
 
-  Footer.afterDOMLoaded = `
+  Footer.afterDOMLoaded = ageGate + `
     const openIssueZoom = (link, english) => {
       const reader = link.closest('.issue-reader')
       const pages = Array.from(reader.querySelectorAll('.issue-page'))

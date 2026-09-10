@@ -108,6 +108,8 @@ async function _navigate(url: URL, isBack: boolean = false) {
   html.body.appendChild(announcer)
 
   document.querySelector(".navigation-progress")?.remove()
+  document.documentElement.lang = html.documentElement.lang
+  document.documentElement.dir = html.documentElement.dir
   micromorph(document.body, html.body)
 
   // scroll into place and add history

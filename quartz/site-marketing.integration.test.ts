@@ -33,22 +33,10 @@ test("production homepage exposes the canonical marketing and analytics contract
   assert.match(javascript, /reachGoal/)
 })
 
-test("homepage offers current routes for reading, participation, support, and direct contact", () => {
+test("Hindi homepage keeps reading, club and contact routes", () => {
   const homepage = readFileSync(join(process.cwd(), "content", "index.md"), "utf8")
-  const bookclub = readFileSync(join(process.cwd(), "content", "projects", "bookclub.md"), "utf8")
-
-  assert.match(homepage, /Заказать «косую бейку»/)
-  assert.match(homepage, /Читать стохастический журнал/)
-  assert.match(homepage, /Limite.*10 августа 2026/)
-  assert.match(homepage, /Странника.*29 августа 2026/)
-  assert.match(homepage, /Письма «Катоблепаса»/)
-  assert.match(homepage, /Все выпуски журнала/)
-  assert.match(homepage, /data-metrika-goal="order_click"/)
-  assert.match(homepage, /data-metrika-goal="journal_click"/)
-  assert.match(homepage, /data-metrika-goal="participation_click"/)
-  assert.match(homepage, /data-metrika-goal="newsletter_click"/)
-  assert.doesNotMatch(homepage, /\[\[№ 1 \(1\)\|Выпуск № 1 \(1\)\]\]/)
-  assert.doesNotMatch(homepage, /## Редакция/)
-  assert.match(bookclub, /## Ближайшая встреча/)
-  assert.match(bookclub, /Александр Вельтман, «Странник» \(1832\).*29 августа 2026/s)
+  for (const target of ["published/biastape#Заказать", "journal/index", "projects/filmclub", "projects/bookclub"]) assert.ok(homepage.includes("[[" + target + "|"))
+  assert.match(homepage, /lang: hi-IN/)
+  assert.match(homepage, /mailto:vox@catoblepaspress.ru/)
+  assert.match(homepage, /mailto:ungh@catoblepaspress.ru/)
 })

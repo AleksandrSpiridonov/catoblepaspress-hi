@@ -1,14 +1,12 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Катоблепас
+  pageTitle: कातोब्लेपस
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
-  analytics:
-    provider: yandex
-    counterId: 111323493
-  locale: ru-RU
-  baseUrl: catoblepaspress.ru
+  analytics: null
+  locale: hi-IN
+  baseUrl: aleksandrspiridonov.github.io/catoblepaspress-hi
   ignorePatterns:
     - private
     - templates
@@ -17,8 +15,8 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Source Sans Pro
-      body: Source Sans Pro
+      header: Noto Sans Devanagari
+      body: Noto Sans Devanagari
       code: IBM Plex Mono
     colors:
       lightMode:
@@ -102,10 +100,10 @@ plugins:
     enabled: true
     options:
       fontOrigin: googleFonts
-      title: Source Sans Pro
-      header: Source Sans Pro
-      body: Source Sans Pro
-      interface: Source Sans Pro
+      title: Noto Sans Devanagari
+      header: Noto Sans Devanagari
+      body: Noto Sans Devanagari
+      interface: Noto Sans Devanagari
       code: IBM Plex Mono
   - source: "@quartz-community/remove-draft"
     enabled: true
@@ -121,7 +119,7 @@ plugins:
   - source: "@quartz-community/og-image"
     enabled: true
   - source: "@quartz-community/cname"
-    enabled: true
+    enabled: false
   - source: "@quartz-community/content-page"
     enabled: true
   - source: "@quartz-community/folder-page"
@@ -204,7 +202,7 @@ plugins:
   - source: "@quartz-community/breadcrumbs"
     enabled: true
     options:
-      rootName: Главная
+      rootName: मुखपृष्ठ
     layout:
       position: beforeBody
       priority: 5

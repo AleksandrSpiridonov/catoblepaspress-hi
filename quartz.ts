@@ -1,3 +1,4 @@
+import { TranslationStatus } from "./quartz/plugins/transformers/translationStatus"
 import { loadQuartzConfig, loadQuartzLayout } from "./quartz/plugins/loader/config-loader"
 import * as ExternalPlugin from "./.quartz/plugins"
 import CustomFooter from "./quartz/components/CustomFooter"
@@ -27,7 +28,7 @@ const sortExplorerEntries: NonNullable<ExplorerOptions["sortFn"]> = (a, b) => {
 
   return (
     priorityDifference ||
-    aName.localeCompare(bName, "ru", {
+    aName.localeCompare(bName, "hi", {
       numeric: true,
       sensitivity: "base",
     })
@@ -45,11 +46,11 @@ componentRegistry.setOptionOverrides("@quartz-community/og-image", {
 })
 
 const footer = CustomFooter({
-  copyrightText: "© 2025–2026 Издательство «Катоблепас»",
+  copyrightText: "© 2025–2026 कातोब्लेपस प्रकाशन",
   links: {
     Telegram: "https://t.me/catoblepaspress",
     YouTube: "https://www.youtube.com/@catoblepaspress",
-    Документы: "/documents/",
+    "दस्तावेज़ (रूसी)": "https://catoblepaspress.ru/documents/",
   },
 })
 
@@ -66,6 +67,6 @@ const layoutOverrides = {
 }
 
 const config = await loadQuartzConfig(undefined, layoutOverrides)
-config.plugins.transformers.push(MediaAltText())
+config.plugins.transformers.push(MediaAltText(), TranslationStatus())
 export default config
 export const layout = await loadQuartzLayout(layoutOverrides)

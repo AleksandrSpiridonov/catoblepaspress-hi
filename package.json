@@ -18,7 +18,7 @@
     "format": "npx prettier . --write",
     "test": "tsx --test",
     "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1",
-    "install-plugins": "npx tsx ./quartz/plugins/loader/install-plugins.ts",
+    "install-plugins": "tsx ./quartz/plugins/loader/install-plugins.ts && tsx tools/prepare-hi.ts",
     "prebuild": "npm run install-plugins"
   },
   "engines": {

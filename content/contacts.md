@@ -1,19 +1,23 @@
 ---
-title: Контакты
-description: Связаться с издательством «Катоблепас», предложить проект или задать вопрос о заказе
+title: "संपर्क"
+description: "कातोब्लेपस से संपर्क करें, परियोजना सुझाएँ या अपने आदेश के बारे में पूछें"
+lang: hi-IN
+aliases:
+  - Контакты
 ---
-## Связаться с издательством
+<span id="связаться-с-издательством"></span>
+## प्रकाशन से संपर्क करें
 
-- **Telegram:** [@catoblepaspress](https://t.me/catoblepaspress) — новости, анонсы и новые выпуски
-- **YouTube:** [@catoblepaspress](https://www.youtube.com/@catoblepaspress) — видео издательства
-- **Основная почта:** [ungh@catoblepaspress.ru](mailto:ungh@catoblepaspress.ru) — заказы, сотрудничество и общие вопросы
-- **Рассылка издательства:** [vox@catoblepaspress.ru](mailto:vox@catoblepaspress.ru?subject=Подписка%20на%20рассылку%20издательства%20«Катоблепас»&body=Прошу%20подписать%20меня%20на%20официальную%20рассылку%20издательства%20«Катоблепас».) — подписаться на официальные письма «Катоблепаса»
-- **Прежняя почта:** [catoblepaspress@mail.ru](mailto:catoblepaspress@mail.ru) — продолжает работать
-- **Город:** Санкт-Петербург
+- **Telegram:** [@catoblepaspress](https://t.me/catoblepaspress) — समाचार, घोषणाएँ और नए अंक।
+- **YouTube:** [@catoblepaspress](https://www.youtube.com/@catoblepaspress) — प्रकाशन के वीडियो।
+- **मुख्य ईमेल:** [ungh@catoblepaspress.ru](mailto:ungh@catoblepaspress.ru) — आदेश, सहयोग और सामान्य प्रश्न।
+- **समाचार-पत्र:** [vox@catoblepaspress.ru](mailto:vox@catoblepaspress.ru) — कातोब्लेपस के आधिकारिक ईमेल की सदस्यता।
+- **पुराना ईमेल:** [catoblepaspress@mail.ru](mailto:catoblepaspress@mail.ru) — अभी भी सक्रिय है।
+- **शहर:** सेंट पीटर्सबर्ग।
 
-Чтобы мы быстрее ответили, укажите в теме письма книгу, проект или характер предложения.
+जल्दी उत्तर पाने के लिए ईमेल के विषय में पुस्तक, परियोजना या प्रस्ताव का प्रकार लिखें।
 
-## Участвовать
-
-- [[bookclub#Присоединиться|Книжный клуб]]
-- [[filmclub#Присоединиться|Киноклуб]]
+<span id="участвовать"></span>
+## भाग लें
+- [[bookclub#Присоединиться|पुस्तक क्लब]]
+- [[filmclub#Присоединиться|फ़िल्म क्लब]]
