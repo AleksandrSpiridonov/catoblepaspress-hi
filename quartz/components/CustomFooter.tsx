@@ -38,7 +38,7 @@ const CustomFooter: QuartzComponentConstructor<Options> = (opts) => {
       video.controls = true; video.playsInline = true; video.preload = 'none'
       const dialog = document.createElement('dialog')
       dialog.className = 'issue-zoom'
-      dialog.setAttribute('aria-label', english ? 'Image viewer' : 'Просмотр изображения')
+      dialog.setAttribute('aria-label', english ? 'Image viewer' : 'चित्र देखें')
       const bar = document.createElement('div')
       bar.className = 'issue-zoom-bar'
       const stage = document.createElement('div')
@@ -68,14 +68,14 @@ const CustomFooter: QuartzComponentConstructor<Options> = (opts) => {
         b.setAttribute('aria-label', label); b.addEventListener('click', action); bar.append(b)
         return b
       }
-      const previous = button('←', english ? 'Previous page' : 'Предыдущая страница', () => showPage(index-1))
+      const previous = button('←', english ? 'Previous page' : 'पिछला पृष्ठ', () => showPage(index-1))
       const counter = document.createElement('span'); counter.setAttribute('aria-live','polite'); bar.append(counter)
-      const next = button('→', english ? 'Next page' : 'Следующая страница', () => showPage(index+1))
-      const less = button('−', english ? 'Zoom out' : 'Уменьшить', () => zoom(1/1.25))
+      const next = button('→', english ? 'Next page' : 'अगला पृष्ठ', () => showPage(index+1))
+      const less = button('−', english ? 'Zoom out' : 'छोटा करें', () => zoom(1/1.25))
       bar.append(percent)
-      const more = button('+', english ? 'Zoom in' : 'Увеличить', () => zoom(1.25))
-      const reset = button('↺', english ? 'Fit image' : 'Сбросить масштаб', () => {scale=1;x=0;y=0;draw()})
-      button('×', english ? 'Close' : 'Закрыть', () => dialog.close())
+      const more = button('+', english ? 'Zoom in' : 'बड़ा करें', () => zoom(1.25))
+      const reset = button('↺', english ? 'Fit image' : 'मूल आकार', () => {scale=1;x=0;y=0;draw()})
+      button('×', english ? 'Close' : 'बंद करें', () => dialog.close())
       const showPage = target => {
         if(target<0||target>=pages.length)return
         index=target;video.pause();video.removeAttribute('src');video.load();points.clear();x=0;y=0
@@ -130,7 +130,7 @@ const CustomFooter: QuartzComponentConstructor<Options> = (opts) => {
           const open = document.createElement('button')
           open.type = 'button'
           open.className = 'issue-open-viewer'
-          open.textContent = reader.lang === 'en' ? 'Open viewer' : 'Открыть просмотр'
+          open.textContent = reader.lang === 'en' ? 'Open viewer' : 'दर्शक खोलें'
           video.after(open)
           open.addEventListener('click', () => {
             reader.querySelectorAll('video').forEach(item=>item.pause())

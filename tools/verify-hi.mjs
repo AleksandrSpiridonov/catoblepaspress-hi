@@ -10,7 +10,7 @@ import YAML from "yaml"
 const config = YAML.parse(fs.readFileSync("quartz.config.yaml", "utf8")).configuration
 const base = new URL(`https://${config.baseUrl}/`)
 const pages = fs.readdirSync("content", { recursive: true }).filter(file => file.endsWith(".md") && /\nlang: hi-IN\r?\n/.test(fs.readFileSync(path.join("content", file), "utf8")))
-assert.equal(pages.length, 32)
+assert.equal(pages.length, 36)
 const problems = []
 for (const file of pages) {
   const slug = slugifyFilePath(file.replaceAll("\\", "/"))
@@ -66,3 +66,22 @@ assert.match(excerpt, /सभी प्रश्नों के लिए प�
 assert.match(excerpt, /mailto:ungh@catoblepaspress.ru/)
 assert.match(excerpt, /पूरा रूसी पाठ पढ़ें →\]\(https:\/\/catoblepaspress.ru\/publications\/almighty\)/)
 console.log("Verified excluded translations and bounded Almighty excerpt with publisher contact and full Russian text link.")
+
+for (const [club, expected] of [["bookclub", 27], ["filmclub", 43]]) {
+  const html = fs.readFileSync("public/projects/" + club + ".html", "utf8")
+  let rows = 0
+  visit(fromHtml(html), "element", node => {
+    if (node.tagName !== "tr") return
+    const cells = node.children.filter(n => n.type === "element" && n.tagName === "td")
+    if (!cells.length) return
+    assert.equal(cells.length, 6, club + ": malformed table row")
+    rows++
+  })
+  assert.equal(rows, expected, club + ": missing historical entries")
+  assert.match(html, /id="присоединиться"/)
+}
+const vox = fs.readFileSync("public/projects/voxcatoblepae.html", "utf8")
+assert.equal((vox.match(/class="issue-page"/g) ?? []).length, 16)
+assert.match(vox, /वीडियो, ध्वनि और पृष्ठों की छवियाँ अपनी मूल भाषा में हैं/)
+assert.match(vox, /2025 के आमंत्रण का अभिलेख/)
+console.log("Verified 27 book meetings, 43 film meetings, 16 anthology pages and archived call labelling.")
