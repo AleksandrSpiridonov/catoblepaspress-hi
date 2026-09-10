@@ -10,7 +10,7 @@ import YAML from "yaml"
 const config = YAML.parse(fs.readFileSync("quartz.config.yaml", "utf8")).configuration
 const base = new URL(`https://${config.baseUrl}/`)
 const pages = fs.readdirSync("content", { recursive: true }).filter(file => file.endsWith(".md") && /\nlang: hi-IN\r?\n/.test(fs.readFileSync(path.join("content", file), "utf8")))
-assert.equal(pages.length, 38)
+assert.equal(pages.length, 41)
 const problems = []
 for (const file of pages) {
   const slug = slugifyFilePath(file.replaceAll("\\", "/"))
