@@ -24,8 +24,8 @@ for (const file of fs.readdirSync(root, { recursive: true }) as string[]) {
   if (!file.endsWith(".js")) continue
   const target = path.join(root, file)
   const source = fs.readFileSync(target, "utf8")
-  if (!source.includes('"en-US": en_US_default,') || source.includes('"hi-IN":')) continue
-  fs.writeFileSync(target, source.replace('"en-US": en_US_default,', `"hi-IN": ${serialize(locale)},\n  "en-US": en_US_default,`))
+  if (!source.includes('"en-US": en_US_default') || source.includes('"hi-IN":')) continue
+  fs.writeFileSync(target, source.replace('"en-US": en_US_default', `"hi-IN": ${serialize(locale)},\n  "en-US": en_US_default`))
   patched++
 }
 await build({ entryPoints: ["plugins/language-switcher/src/components.tsx"], outfile: "plugins/language-switcher/dist/components/index.js", bundle: true, format: "esm", platform: "neutral", packages: "external", jsx: "automatic", jsxImportSource: "preact" })
