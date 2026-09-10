@@ -9,7 +9,7 @@ import YAML from "yaml"
 const config = YAML.parse(fs.readFileSync("quartz.config.yaml", "utf8")).configuration
 const base = new URL(`https://${config.baseUrl}/`)
 const pages = fs.readdirSync("content", { recursive: true }).filter(file => file.endsWith(".md") && /\nlang: hi-IN\r?\n/.test(fs.readFileSync(path.join("content", file), "utf8")))
-assert.equal(pages.length, 9)
+assert.equal(pages.length, 21)
 const problems = []
 for (const file of pages) {
   const slug = slugifyFilePath(file.replaceAll("\\", "/"))
@@ -35,10 +35,10 @@ for (const file of pages) {
   })
 }
 assert.deepEqual(problems, [])
-const original = fs.readFileSync("public/published/biastape.html", "utf8")
+const original = fs.readFileSync("public/publications/translations/index.html", "utf8")
 assert.match(original, /<html lang="ru-RU"/)
 assert.match(original, /इसका हिंदी अनुवाद अभी उपलब्ध नहीं है/)
-assert.match(original, /href="https:\/\/catoblepaspress.ru\/published\/biastape"/)
+assert.match(original, /href="https:\/\/catoblepaspress.ru\/publications\/translations\/"/)
 const homepage = fs.readFileSync("public/index.html", "utf8")
 assert.match(homepage, /खोजें/)
 assert.match(homepage, /विषय-सूची|सामग्री/)

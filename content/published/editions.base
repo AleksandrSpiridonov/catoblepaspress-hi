@@ -8,18 +8,18 @@ formulas:
   book: link(file.path, note.title)
 properties:
   formula.book:
-    displayName: Название
+    displayName: शीर्षक
   author:
-    displayName: Автор
+    displayName: लेखक
   year:
-    displayName: Год
+    displayName: वर्ष
   status:
-    displayName: Статус
+    displayName: स्थिति
   formats:
-    displayName: Форматы
+    displayName: प्रारूप
 views:
   - type: cards
-    name: Карточки
+    name: कार्ड
     order:
       - author
       - year
@@ -33,7 +33,7 @@ views:
     imageFit: contain
     cardSize: 230
   - type: table
-    name: Таблица
+    name: तालिका
     order:
       - formula.book
       - author
