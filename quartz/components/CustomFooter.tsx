@@ -1,3 +1,4 @@
+import artistGalleryScript from "./scripts/artist-gallery.inline"
 import ageGate from "./scripts/ageGate.inline"
 import { version } from "../../package.json"
 import { QuartzComponent, QuartzComponentConstructor } from "./types"
@@ -29,7 +30,7 @@ const CustomFooter: QuartzComponentConstructor<Options> = (opts) => {
     </footer>
   )
 
-  Footer.afterDOMLoaded = ageGate + `
+  Footer.afterDOMLoaded = artistGalleryScript + ageGate + `
     const openIssueZoom = (link, english) => {
       const reader = link.closest('.issue-reader')
       const pages = Array.from(reader.querySelectorAll('.issue-page'))
