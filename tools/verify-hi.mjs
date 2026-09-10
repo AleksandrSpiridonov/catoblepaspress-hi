@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto"
 import assert from "node:assert/strict"
 import fs from "node:fs"
 import path from "node:path"
@@ -9,7 +10,7 @@ import YAML from "yaml"
 const config = YAML.parse(fs.readFileSync("quartz.config.yaml", "utf8")).configuration
 const base = new URL(`https://${config.baseUrl}/`)
 const pages = fs.readdirSync("content", { recursive: true }).filter(file => file.endsWith(".md") && /\nlang: hi-IN\r?\n/.test(fs.readFileSync(path.join("content", file), "utf8")))
-assert.equal(pages.length, 21)
+assert.equal(pages.length, 32)
 const problems = []
 for (const file of pages) {
   const slug = slugifyFilePath(file.replaceAll("\\", "/"))
@@ -37,7 +38,7 @@ for (const file of pages) {
 assert.deepEqual(problems, [])
 const original = fs.readFileSync("public/publications/translations/index.html", "utf8")
 assert.match(original, /<html lang="ru-RU"/)
-assert.match(original, /इसका हिंदी अनुवाद अभी उपलब्ध नहीं है/)
+assert.match(original, /इसे हिंदी में दोबारा अनूदित नहीं किया गया है/)
 assert.match(original, /href="https:\/\/catoblepaspress.ru\/publications\/translations\/"/)
 const homepage = fs.readFileSync("public/index.html", "utf8")
 assert.match(homepage, /खोजें/)
@@ -50,3 +51,18 @@ const scripts = fs.readdirSync("public", { recursive: true }).filter(f => f.ends
 assert.doesNotMatch(scripts, /mc\.yandex\.ru/)
 assert.match(scripts, /catoblepas_hi_age_confirmed/)
 console.log(`Verified ${pages.length} Hindi pages, canonical URLs, internal links and anchors, Russian fallback, Hindi interface, and analytics isolation.`)
+
+const preserved = JSON.parse(fs.readFileSync("tools/untranslated-sources.json", "utf8"))
+for (const [file, expected] of Object.entries(preserved.files)) {
+  const actual = createHash("sha256").update(fs.readFileSync(file, "utf8").replaceAll("\r\n", "\n")).digest("hex")
+  assert.equal(actual, expected, file + ": excluded translation changed")
+}
+const excerpt = fs.readFileSync("content/publications/almighty.md", "utf8")
+assert.match(excerpt, /translation_scope: excerpt/)
+assert.match(excerpt, /अध्याय 1 — आरंभिक अंश/)
+assert.doesNotMatch(excerpt, /^## (?:Глава|अध्याय) [2-9]/m)
+assert.ok(excerpt.length < 12000, "Almighty must remain a short opening excerpt")
+assert.match(excerpt, /सभी प्रश्नों के लिए प्रकाशन से संपर्क करें/)
+assert.match(excerpt, /mailto:ungh@catoblepaspress.ru/)
+assert.match(excerpt, /पूरा रूसी पाठ पढ़ें →\]\(https:\/\/catoblepaspress.ru\/publications\/almighty\)/)
+console.log("Verified excluded translations and bounded Almighty excerpt with publisher contact and full Russian text link.")
