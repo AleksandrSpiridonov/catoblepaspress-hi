@@ -10,7 +10,7 @@ import YAML from "yaml"
 const config = YAML.parse(fs.readFileSync("quartz.config.yaml", "utf8")).configuration
 const base = new URL(`https://${config.baseUrl}/`)
 const pages = fs.readdirSync("content", { recursive: true }).filter(file => file.endsWith(".md") && /\nlang: hi-IN\r?\n/.test(fs.readFileSync(path.join("content", file), "utf8")))
-assert.equal(pages.length, 42)
+assert.equal(pages.length, 58)
 const problems = []
 for (const file of pages) {
   const slug = slugifyFilePath(file.replaceAll("\\", "/"))
@@ -85,3 +85,24 @@ assert.equal((vox.match(/class="issue-page"/g) ?? []).length, 16)
 assert.match(vox, /वीडियो, ध्वनि और पृष्ठों की छवियाँ अपनी मूल भाषा में हैं/)
 assert.match(vox, /2025 के आमंत्रण का अभिलेख/)
 console.log("Verified 27 book meetings, 43 film meetings, 16 anthology pages and archived call labelling.")
+
+// All publishable source pages must be translated or explicitly preserved.
+for (const file of fs.readdirSync('content', {recursive:true}).filter(f=>f.endsWith('.md'))) {
+  const normalized=file.replaceAll('\\','/')
+  if(normalized.startsWith('templates/')) continue
+  const source=fs.readFileSync(path.join('content',file),'utf8')
+  const fm=YAML.parse(source.split('---')[1]) ?? {}
+  if(fm.draft===true || fm.draft==='true') continue
+  assert.ok(fm.lang==='hi-IN' || preserved.files['content/'+normalized], normalized+': unaccounted untranslated page')
+}
+const finalSources=JSON.parse(fs.readFileSync('tools/final-source-manifest.json','utf8'))
+for(const [file, expected] of Object.entries(finalSources.files)) {
+  const t=fs.readFileSync(file,'utf8').replaceAll('\r\n','\n')
+  assert.deepEqual([...new Set(t.match(/https?:\/\/[^\s"<>)]*/g)||[])].sort(),expected.urls,file+': URLs changed')
+  assert.deepEqual([...t.matchAll(/\[\[([^|\]]+)(?:\|[^\]]*)?\]\]/g)].map(m=>m[1]).sort(),expected.wiki,file+': link targets changed')
+  assert.equal((t.match(/^\*\*[^*]+:\*\*/gm)||[]).length,expected.dialogue,file+': dialogue missing')
+  assert.equal((t.match(/<figure class="issue-page"/g)||[]).length,expected.mediaPages,file+': media missing')
+}
+const drina=fs.readFileSync('content/publications/thebridgeonthedrina.md','utf8').replaceAll('\r\n','\n')
+assert.deepEqual(drina.split('\n\n').filter(p=>p.startsWith('>')).map(p=>createHash('sha256').update(p).digest('hex')),finalSources.drinaQuoteHashes)
+console.log('Verified complete page coverage, final source links, interview turns, issue media and preserved novel quotations.')

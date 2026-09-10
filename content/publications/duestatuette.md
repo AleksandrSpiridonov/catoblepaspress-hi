@@ -1,32 +1,37 @@
 ---
 aliases:
   - Due statuette, che sciocchezza...
-title: Due statuette, che sciocchezza...
-description: Стихотворение Елизаветы Калужской
+title: दो छोटी मूर्तियाँ, कैसी नादानी…
+description: येलिज़ावेता कालुझ्स्काया की कविता — इतालवी मूल से हिंदी अनुवाद
 tags:
-  - поэзия
+  - कविता
+lang: hi-IN
 ---
-## Due statuette, che sciocchezza...
-[[ylisse|Елизавета Калужская]]
+<span id="due-statuette-che-sciocchezza"></span>
+## दो छोटी मूर्तियाँ, कैसी नादानी…
+[[ylisse|येलिज़ावेता कालुझ्स्काया]]
 
-Due statuette, che sciocchezza,  
-Nascoste in una scatola sotto il tavolo.  
-La storia ha scritto che stiano in un castello,  
-È il loro destino combattere a oltranza.  
-Degne delle legioni romane: ostinate, inespugnabili e fiere.  
-Avanzano tra le ceneri della propria inimicizia.  
+*इतालवी मूल से अनुवाद।*
 
-Sotto il peso di varie torture –  
-Silenziose, le loro bocche sono vuote.  
-Così crollano gli imperi –  
-Senza barbari, senza fiamme nella notte:  
-Solo una crepa nella colonna dell’acquedotto,  
-Clusivius, c’est fini.  
+दो छोटी मूर्तियाँ, कैसी नादानी,  
+मेज़ के नीचे एक डिब्बे में छिपी हुईं।  
+इतिहास ने लिख दिया कि वे एक दुर्ग में रहें,  
+अंतिम सीमा तक लड़ना उनकी नियति है।  
+रोमन सेनाओं के योग्य: हठी, अजेय, गर्वीली।  
+अपनी ही शत्रुता की राख से गुज़रती आगे बढ़ती हैं।  
 
-Le porterò nella città della gloria lupesca,  
-Tra le rovine di quei selciati,  
-Che il Tevere le nasconda,  
-E lavi via la loro traccia nel profondo dell’acqua sorda.  
+तरह-तरह की यातनाओं के भार तले —  
+मौन, उनके मुँह रिक्त हैं।  
+इसी तरह साम्राज्य ढहते हैं —  
+बिना बर्बरों के, रात में बिना लपटों के:  
+बस जलसेतु के स्तंभ में एक दरार,  
+क्लूसिवियुस, सब समाप्त।  
 
-## Впервые опубликовано
-- [[№ 21 (7)|Выпуск № 21 (7)]]
+उन्हें भेड़िए की महिमा वाले नगर ले जाऊँगी,  
+उन पत्थर की सड़कों के खंडहरों के बीच,  
+तिबर उन्हें छिपा ले,  
+और बहरे जल की गहराई में उनका निशान धो दे।  
+
+<span id="впервые-опубликовано"></span>
+## पहली बार प्रकाशित
+- [[№ 21 (7)|अंक № 21 (7)]]

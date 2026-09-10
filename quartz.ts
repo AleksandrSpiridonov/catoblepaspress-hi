@@ -50,7 +50,7 @@ const footer = CustomFooter({
   links: {
     Telegram: "https://t.me/catoblepaspress",
     YouTube: "https://www.youtube.com/@catoblepaspress",
-    "दस्तावेज़ (रूसी)": "https://catoblepaspress.ru/documents/",
+    "दस्तावेज़": "https://hi.catoblepaspress.ru/documents/",
   },
 })
 
