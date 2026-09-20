@@ -15,36 +15,6 @@ lang: hi-IN
 ---
 ![[biastape.webp]]
 
-<span id="заказать"></span>
-## आदेश दें
-संस्करण चुनें और आदेश दें। यदि फ़ॉर्म न खुले, तो [catoblepaspress@mail.ru](mailto:catoblepaspress@mail.ru) पर «косая бейка» विषय के साथ लिखें। पुस्तक का मूल रूसी में है।
-
-> [!success] पूर्व-आदेश समाप्त
-> पुस्तक का समर्थन करने और पूर्व-आदेश देने वाले सभी पाठकों का धन्यवाद। इस सप्ताह पुस्तक मुद्रणालय भेजी जाएगी। प्रस्तुति सितंबर के तीसरे दशक में होगी — सटीक तारीख, स्थान और अन्य विवरण बाद में बताए जाएँगे।
->
-> यदि आपने पूर्व-आदेश दिया है, तो अपना ईमेल और «स्पैम» फ़ोल्डर जाँचें।
-
-<span id="печатная-версия"></span>
-### मुद्रित संस्करण
-**490 ₽**  
-**डिलीवरी:**  
-रूसी डाक **350 ₽**  
-СДЭК **700 ₽**
-
-<span id="электронная-версия"></span>
-### डिजिटल संस्करण
-**350 ₽**  
-**प्रारूप:** PDF, रूसी में।
-
-> [!info] आदेश कैसे दें
-> फ़ॉर्म भरें — हम आपको भुगतान और पुस्तक प्राप्त करने की जानकारी ईमेल से देंगे। फ़ॉर्म रूसी में है।
-
-फ़ॉर्म भेजने से पहले [[documents/privacy|व्यक्तिगत डेटा के प्रसंस्करण की नीति (रूसी में)]] और [[documents/personal-data-consent|व्यक्तिगत डेटा के प्रसंस्करण की सहमति (रूसी में)]] पढ़ें।
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdEbOzuysovGTcVuT2_FwNurZ3S6g1zyGsdZLbjpg3fY5AlrA/viewform?embedded=true" title="косая бейка — आदेश फ़ॉर्म, रूसी में" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">लोड हो रहा है…</iframe>
-
-<a class="external-cta" href="https://www.litres.ru/book/marusya-navka/kosaya-beyka-74111291/?ysclid=mtldg74zmu871061559" target="_blank" rel="noopener noreferrer">LitRes पर रूसी मूल पढ़ें</a>
-
 <span id="выходные-данные"></span>
 ## प्रकाशन विवरण
 *मारुस्या नाव्का।* «Косая бейка» (तिरछी किनारी)। सेंट पीटर्सबर्ग: कातोब्लेपस, 2026।  
@@ -76,3 +46,36 @@ ISBN 978-5-600-05479-0।
 
 > [!tip] लेखक का साक्षात्कार
 > «косая бейка», कविता, संगीत और रंगमंच पर [[interviews/marusya-navka-kosaya-beyka|मारुस्या नाव्का का साक्षात्कार]] देखें या पढ़ें। पाठ अभी रूसी में है।
+
+<span id="заказать"></span>
+## आदेश दें
+
+संस्करण चुनें और [catoblepaspress@mail.ru](mailto:catoblepaspress@mail.ru) पर विषय «косая бейка» के साथ लिखें। हम भुगतान और पुस्तक प्राप्त करने की जानकारी बताएँगे। पुस्तक का मूल रूसी में है।
+
+<span id="печатная-версия"></span>
+### मुद्रित संस्करण
+**490 ₽**<br>
+**डिलीवरी:** रूसी डाक — **350 ₽**, СДЭК — **700 ₽**
+
+<span id="электронная-версия"></span>
+### डिजिटल संस्करण
+**350 ₽**<br>
+**प्रारूप:** PDF, रूसी में।
+
+आदेश देने से पहले [[documents/privacy|व्यक्तिगत डेटा के प्रसंस्करण की नीति (रूसी में)]] और [[documents/personal-data-consent|व्यक्तिगत डेटा के प्रसंस्करण की सहमति (रूसी में)]] पढ़ें।
+
+<a class="external-cta" href="https://www.litres.ru/book/marusya-navka/kosaya-beyka-74111291/?ysclid=mtldg74zmu871061559" target="_blank" rel="noopener noreferrer">LitRes पर रूसी मूल पढ़ें</a>
+
+<span id="где-купить"></span>
+## कहाँ खरीदें
+
+<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A2d7ad5a2f1a0acbb4cc0bee7e7304f2929aeb2d9e2ebfa2a7d6c966534698e50&amp;width=100%25&amp;height=513&amp;lang=ru_RU&amp;scroll=true"></script>
+
+यात्रा से पहले पुस्तक की उपलब्धता जाँचें:
+
+- [Wöd — Большая Морская улица, 45](https://yandex.ru/maps/?text=W%C3%B6d%2C%20Большая%20Морская%2045%2C%20Санкт-Петербург)
+- [Флёр / Fleur Vintage — Ковенский переулок, 22–24](https://yandex.ru/maps/-/CXAsEF3e)
+- [Хороший тигр — Садовая улица, 56](https://yandex.ru/maps/?text=Хороший%20тигр%2C%20Садовая%2056%2C%20Санкт-Петербург)
+- [Le Moniteur — Кадетская линия В. О., 31](https://yandex.ru/maps/?text=Le%20Moniteur%2C%20Кадетская%20линия%2031%2C%20Санкт-Петербург)
+- [Мистические бриоши Марии-Антуанетты — Средний проспект В. О., 46](https://yandex.ru/maps/?text=Мистические%20бриоши%20Марии-Антуанетты%2C%20Средний%20проспект%2046%2C%20Санкт-Петербург)
+- [Букинист ЦАП — улица Кропоткина, 19/8](https://yandex.ru/maps/-/CXAwyZP0)
